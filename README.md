@@ -46,7 +46,8 @@ A Java-based web application for personal financial management. The app enables 
    ```sql
    CREATE DATABASE financial_db;
 4. Run the following table creation queries:
--- Users Table
+```sql
+ Users Table
 CREATE TABLE users (
   id INT PRIMARY KEY AUTO_INCREMENT,
   username VARCHAR(100),
@@ -86,7 +87,7 @@ CREATE TABLE expense (
   description TEXT,
   user_id INT
 );
-
+```
 ### 📊 Visualization
 Charts are rendered using Chart.js on the home page  to show:
 Daily income vs expense pie chart<br/>
