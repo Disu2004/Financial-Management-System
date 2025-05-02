@@ -36,5 +36,62 @@ A Java-based web application for personal financial management. The app enables 
 
 ---
 
-## 📁 Folder Structure
+---
 
+## 🗄️ Database Configuration (MySQL via XAMPP)
+
+1. Start **Apache** and **MySQL** from XAMPP.
+2. Go to `http://localhost/phpmyadmin`.
+3. Create a database:  
+   ```sql
+   CREATE DATABASE financial_db;
+4. Run the following table creation queries:
+-- Users Table
+CREATE TABLE users (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  username VARCHAR(100),
+  password VARCHAR(100)
+);
+
+-- Income Category Table
+CREATE TABLE income_categories (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(100),
+  user_id INT
+);
+
+-- Expense Category Table
+CREATE TABLE expense_categories (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(100),
+  user_id INT
+);
+
+-- Income Table
+CREATE TABLE income (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  amount DOUBLE,
+  category_id INT,
+  date DATE,
+  description TEXT,
+  user_id INT
+);
+
+-- Expense Table
+CREATE TABLE expense (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  amount DOUBLE,
+  category_id INT,
+  date DATE,
+  description TEXT,
+  user_id INT
+);
+
+### 📊 Visualization
+Charts are rendered using Chart.js on the home page  to show:
+Daily income vs expense pie chart<br/>
+Monthly income vs expense pie chart
+Yearly income vs expense pie chart
+
+# ✍️ Author
+Dishant Upadhyay
